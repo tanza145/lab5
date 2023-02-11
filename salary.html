@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="Top-header">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="salary.css" rel="stylesheet">
+</head>
+<body>
+      <div id=innerbg>
+        <div id="container-fluid">
+          <h2 class="py-1">Weekly Salary Calculator</h2>
+          <br>
+          <form>
+            <div class="form-group">
+              <table  cellspacing="10">
+                <tr>
+                  <td><label class="lol" for="firstName" >First Name:</label></td>
+                  <td><input autofocus class="py-1 form-control form-control-sm" type="text" id="firstName" required></td>
+                </tr>
+                <tr>
+                  <td><label  for="lastName">Last Name:</label></td>
+                  <td><input class="form-control form-control-sm" type="text" id="lastName" required></td>
+                </tr>
+                <tr>
+                  <td> <label for="salaryPerHour">Salary per Hour:</label></td>
+                  <td><input class="form-control form-control-sm" value="10" type="number" id="salaryPerHour" required></td>
+                </tr>
+              </table>
+            </div>
+            <br>
+    
+            <h3>Daily Work Hours</h3>
+    
+            <div class="container">
+              <div class="row mb-2 justify-content-center">
+                <div class="col text-center ps-0 ">
+                  <label class="d-block lol" for="day1">Mon:</label>
+                  <input type="text" id="day1" onfocus="this.value=''" value="0" class="form-control form-control-sm" required>
+                </div>
+                <div class="col text-center ">
+                  <label class="d-block lol" for="day2">Tue:</label>
+                  <input type="text" id="day2" onfocus="this.value=''"  value="0" class="form-control form-control-sm" required>
+                </div>
+                <div class="col text-center">
+                  <label class="d-block lol" for="day3">Wed:</label>
+                  <input type="text" id="day3" onfocus="this.value=''" value="0" class="form-control form-control-sm" required>
+                </div>
+                <div class="col text-center">
+                  <label class="d-block lol" for="day4">Thu:</label>
+                  <input type="text" id="day4" onfocus="this.value=''" value="0" class="form-control form-control-sm" required>
+                </div>
+                <div class="col text-center">
+                  <label class="d-block lol" for="day5">Fri:</label>
+                  <input type="text" id="day5" onfocus="this.value=''" value="0" class="form-control form-control-sm" required>
+                </div>
+                <div class="col text-center">
+                  <label class="d-block lol" for="day6">Sat:</label>
+                  <input type="text" id="day6" value="0" onfocus="this.value=''" class="form-control form-control-sm" required>
+                </div>
+                <div class="col text-center">
+                  <label class="d-block lol" for="day7">Sun:</label>
+                  <input type="text" id="day7" value="0"  onfocus="this.value=''" class="form-control form-control-sm" required>
+                </div>
+              </div>
+            </div>
+            <br>
+            <button class="btn btn-success" type="button" onclick="calculateSalary()">Calculate</button>
+            <button class="btn btn-danger" type="reset" onclick="resetInputs()">Reset</button>
+          </form>
+          <hr>
+          <h2>Result:</h2>
+          <h4 id="result"></h4>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+      <script type="text/javascript">
+        function calculateSalary() {
+          var firstName = document.getElementById("firstName").value;
+          var lastName = document.getElementById("lastName").value;
+          var salaryPerHour = document.getElementById("salaryPerHour").value;
+          var day1 = document.getElementById("day1").value;
+          var day2 = document.getElementById("day2").value;
+          var day3 = document.getElementById("day3").value;
+          var day4 = document.getElementById("day4").value;
+          var day5 = document.getElementById("day5").value;
+          var day6 = document.getElementById("day6").value;
+          var day7 = document.getElementById("day7").value;
+          var weeklySalary = 0;
+    
+    
+          if (day1 > 8 || day2 > 8 || day3 > 8 || day4 > 8 || day5 > 8 || day6 > 8 || day7 > 8) {
+            alert("Daily work hours cannot be more than 8");
+            return;
+          }
+    
+          
+    
+          weeklySalary = (day1 * salaryPerHour) + (day2 * salaryPerHour) + (day3 * salaryPerHour) + (day4 * salaryPerHour) + (day5 * salaryPerHour) + (day6 * salaryPerHour) + (day7 * salaryPerHour);
+    
+          document.getElementById("result").innerHTML = "Name: " + firstName + " " + lastName + "<br>Weekly Salary: $" + weeklySalary;
+        }
+    
+        function resetInputs() {
+          document.getElementById("result").innerHTML = "";
+        }
+    
+    
+    
+      </script>
+</body>
+</html>

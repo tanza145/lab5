@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#Top-header{
+  background-color:black;
+}
+
+#menu{
+  color: white;
+  padding: 15px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+body {
+    background: no-repeat center/cover fixed url("https://media.tenor.com/QN-H0zpiVucAAAAd/hunter-x-hunter-anime.gif")
+}
+h1 {
+    text-align: center;
+    color: Black;
+    margin-top: 50px
+}

@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Prompt", sans-serif;
+  }
+  #Top-header{
+    background-color:black;
+  }
+  
+  #menu{
+    color: white;
+    padding: 15px;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .remove-button {
+      margin-top: 1px;
+     }
+     /* This will fade in the new added tasks using the animation property */
+  #todo-list {
+      margin: 1rem 0;
+    }
+    
+  .task-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1rem;
+    }
+  .task-container h5,
+  .task-container button {
+      display: inline !important;
+      width: unset;
+    }
+  .task {
+      opacity: 0;
+      -webkit-animation: fadeIn 0.5s linear forwards;
+      -moz-animation: fadeIn 0.5s linear forwards;
+      -o-animation: fadeIn 0.5s linear forwards;
+      animation: fadeIn 0.5s linear forwards;
+  }
+     /* you need to define the fadeIn keyframe property for it to work */
+     @keyframes fadeIn {
+      to {
+      opacity: 1;
+      }
+     }
+
+  body {
+    background-color: gray;
+  }
